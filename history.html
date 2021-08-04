@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav-head">
+        <span><img class="logo" src="yuvDairy.png" alt="logo"></span>
+        <span class="logo-heading">History Page</span>
+        <span class="logo-heading pointer">Logout</span>
+    </div>
+    <div class="container">
+        <div class="texture">
+            <div class="flex-two">
+            <span class="letter">
+                Choose your date:
+            </span>
+            <input class="date" type="date">
+            <button class="medium-button">Get this day history</button>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="show">
+        <div class="texture">
+            <span class="heading"><span>Dairy of {{date}}</span></span>
+            <br>
+            <input class="subject" placeholder="subject" type="text" disabled>
+            <br>
+            <br>
+            <textarea class="description" spellcheck="false" disabled></textarea>
+            <br>
+            <br>
+            <button class="large-button" onclick="fun()">Post for today</button>
+        </div>
+    </div>
+</body>
+</html>

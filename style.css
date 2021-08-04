@@ -1,0 +1,124 @@
+:root{
+    --background: #252A34;
+    --texture:  #08D9D6 ;
+    --letters: #252A34; 
+    --movements: #FF2E63 ;
+    --button: #EAEAEA;
+ }
+body{
+    margin: 0px;
+    background: var(--background);
+}
+button{
+    cursor: pointer;
+}
+
+.nav-head{
+    background: var(--movements);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    height: 50px;
+    width: 50px;
+    border: 5px solid var(--letters);
+    border-radius: 50%;
+}
+.logo-heading {
+    font-size: 27px;
+    color: var(--letters);
+    align-self: center;
+    font-weight: 800;
+}
+.pointer{
+    cursor: pointer;
+}
+.container{
+    padding: 50px;
+}
+.texture{
+    background: var(--texture);
+    padding: 20px;
+}
+.letter{
+    color: var(--letters);
+    font-size: 18px;
+    font-weight: 400;
+    align-self: center;
+}
+.medium-button{
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    background: var(--movements);
+    color: var(--button);
+    border: 3px solid var(--background);
+    border-radius: 10px;
+}
+.flex-two{
+    display: flex;
+    justify-content: space-between;
+}
+.large-image{
+    height: 300px;
+    width: 300px;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+.h2{
+    font-size: 30px;
+    padding: 20px;
+    color: var(--letters);
+}
+.subject{
+    border: 1px solid var(--letters);
+    border-radius: 5px;
+    width: -webkit-fill-available;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize ;
+}
+.description{
+    color: var(--movements);
+    background: var(--background);
+    width: -webkit-fill-available;
+    height: 33vw;
+    font-size: 18px;
+    font-weight: 400;
+    border: 2px solid rgba(255, 255, 255, 0.829);
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+.large-button{
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 800;
+    width: -webkit-fill-available;
+    background: var(--movements);
+    color: var(--button);
+    border: 3px solid var(--letters);
+    border-radius: 10px;  
+}
+.heading{
+    justify-content: center;
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--letters);
+    display: flex;
+    justify-content: center;
+}
+.date{
+    color: var(--letters);
+    border: 1px solid var(--letters);
+    border-radius: 5px;
+    padding: 0px 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+#show{
+    display: none;
+}

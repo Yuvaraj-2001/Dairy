@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuv Dairy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav-head">
+        <span><img class="logo" src="yuvDairy.png" alt="logo"></span>
+        <span class="logo-heading">Welcome Yuvaraj!</span>
+        <span class="logo-heading pointer">Logout</span>
+    </div>
+    
+    <div class="container">
+        <div class="texture">
+            <div class="flex-two">
+            <span class="letter">
+                Hey Yuvaraj add your daily dairy record, post your day with words.
+            </span>
+            <button class="medium-button">Start new Post</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="texture">
+            <span class="heading"><span>Write your day here!</span></span>
+            <br>
+            <input class="subject" id="sub" placeholder="subject" type="text">
+            <br>
+            <br>
+            <textarea class="description" id="des" spellcheck="false"></textarea>
+            <br>
+            <br>
+            <button class="large-button" onclick="createTask();">Post for today</button>
+        </div>
+    </div>
+    <div id="cardSection"></div>
+    <div class="container" id="end">
+        <div class="texture">
+            <div class="flex-two">
+                <span class="letter h2">Hope your day went well
+                    <ul>
+                        <li>consistency is the key</li>
+                        <li>Keep concentrating on the work</li>
+                        <li>Don't go crazy, be attentive.</li>
+                        <li>keep your mind on</li>
+                        <li>Keep motivating your self</li>
+                    </ul>
+                    <button class="medium-button">See your history</button>
+                </span>
+                <img src="yuvDairy.png" class="large-image">
+            </div>
+            
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

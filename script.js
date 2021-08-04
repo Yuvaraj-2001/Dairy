@@ -1,17 +1,17 @@
 // var firebaseConfig = {
-//     apiKey: "AIzaSyDcKLi8aWS5zLCdfRtEUyAagx59pPhqu08",
-//     authDomain: "crudapp-f84f5.firebaseapp.com",
-//     databaseURL: "https://crudapp-f84f5-default-rtdb.firebaseio.com",
-//     projectId: "crudapp-f84f5",
-//     storageBucket: "crudapp-f84f5.appspot.com",
-//     messagingSenderId: "619649889963",
-//     appId: "1:619649889963:web:6640fc5b4d5ddbf250e9ee",
-//     measurementId: "G-NR37CLKL29"
+//     apiKey: "AIzaSyBfzVWTUubovptlLNu7tbEkP8Rnt21sceA",
+//     authDomain: "angular-5b97d.firebaseapp.com",
+//     databaseURL: "https://angular-5b97d-default-rtdb.firebaseio.com",
+//     projectId: "angular-5b97d",
+//     storageBucket: "angular-5b97d.appspot.com",
+//     messagingSenderId: "72718290592",
+//     appId: "1:72718290592:web:cd50fdb5cbd9ad7b1243c5",
+//     measurementId: "G-3JHEZ9PC5Y"
 //   };
   var firebaseConfig = {
+
     apiKey: "AIzaSyCDyZ1AjqeZbQfa0ePGiBcMo4POpSKTyc4",
     authDomain: "dairy-aa602.firebaseapp.com",
-    databaseURL: "https://dairy-aa602-default-rtdb.firebaseio.com",
     projectId: "dairy-aa602",
     storageBucket: "dairy-aa602.appspot.com",
     messagingSenderId: "144338449131",
@@ -19,50 +19,58 @@
     measurementId: "G-GZWT9KZK4V"
   };
   // Initialize Firebase
+//   https://console.firebase.google.com/u/1/project/dairy-aa602/settings/general/web:YTNkZDFjYTItYzIzMi00ZTJlLWIxMjQtNGQ5NDRmNWE1YTcw
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-    
-function createTask(){
-
-    var sub = document.getElementById('sub').value;
-    var description = document.getElementById('des').value;
-    var task = {
-        task: sub,
-        description: description
-    }
+  function duntoday(){
+      debugger
     const d = new Date();
-    const date =  d.getDate() + '-' + d.getMonth() + "-" + d.getFullYear();
-    console.log(date);
-    debugger
-    let db = firebase.firestore().collection(date);
-    db.add(task).then(()=>{
-     console.log('good job!', "task addded", "success")
-    })
-    document.getElementById("cardSection").innerHTML="";
-    readTask();
-}
-readTask();
-function readTask(){
-    debugger
-    const d = new Date();
-    const date =  d.getDate() + '-' + d.getMonth() + "-" + d.getFullYear();
-    firebase.firestore().collection(date).onSnapshot(function(snapshot){
-        document.getElementById("cardSection").innerHTML="";
+    let date   = d.getDate();
+    let mon = d.getMonth();
+    let year = d.getFullYear();
+    var arr = [];
+    const today = "" + date + "-" + mon + "-" + year +"";
+    firebase.firestore().collection(today).onSnapshot(function(snapshot){
+        snapshot.forEach(function(value){
+            data = {
+                id: value.id,
+                head: value.data().head,
+                des: value.data().des,
+            }
+            arr.push(data)
+        })
+        console.log(arr);
+        console.log(arr.length)
         debugger
-        snapshot.forEach(function(taskValue){
-            document.getElementById("cardSection").innerHTML +=`
-          <div class="card mb-3">
-            <div class="card-body">
-                <h5 class="card-title">${taskValue.data().task}</h5>
-                <p class="card-test">${taskValue.data().description}</p>
-                <button type="submit" style="color:white" class="btn btn-warning" onclick="updateTask(
-                    '${taskValue.id}','${taskValue.data().task}', '${taskValue.data().description}'
-                )">Edit Task</button>
-                <button type="submit" class="btn btn-danger" onclick="deleteTask('${taskValue.id}')">
-                delete</button>
-            </div>
-           </div>`
-        });
-          
-      });
-}
+        if(arr.length < 0){
+            return false; 
+        }else{
+            return true;
+        }
+        
+    })
+    
+  }
+
+  function send(){
+    if(!duntoday()){
+        alert("you have already wroye ypur day please check")
+        return
+    }else{
+    var hed = document.getElementById("hed").value;
+    var des = document.getElementById("des").value;
+    const d = new Date();
+    let date   = d.getDate();
+    let mon = d.getMonth();
+    let year = d.getFullYear();
+    const today = date + "-" + mon + "-" + year;
+    const sending = {
+        head: hed,
+        des: des,
+        date: today
+    }
+    let db = firebase.firestore().collection(today+"/");    
+    db.add(sending).then(()=>{
+      alert("done");
+  });
+  }
+  }

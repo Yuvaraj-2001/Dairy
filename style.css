@@ -2,6 +2,7 @@
     --background: #252A34;
     --texture:  #08D9D6 ;
     --letters: #252A34; 
+    --letter2: #ffffff;
     --movements: #FF2E63 ;
     --button: #EAEAEA;
  }
@@ -12,7 +13,9 @@ body{
 button{
     cursor: pointer;
 }
-
+#his{
+    display: none;
+}
 .nav-head{
     background: var(--movements);
     padding: 10px 20px;
@@ -122,3 +125,59 @@ button{
 #show{
     display: none;
 }
+#hide{
+    display: none;
+}
+.readP{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    margin: -20px 0px;
+}
+.alert{
+    border-top: 10px solid var(--movements);
+    /* border: 10px solid var(--movements); */
+}
+.black-bg{
+    background-color: var(--background);
+}
+.main-body{
+    width: 80%;
+}
+.body-content{
+    display: flex;
+    flex-direction: row;
+}
+.side-body{
+    width: 20%;
+    text-align: center;
+    background-color: var(--texture);
+    padding-top: 30px;
+
+}
+.side-header {
+    color: var( --letters);
+    font-size: 30px;
+    font-weight: 800;
+    font-style: oblique;
+}
+.scrollable{
+    width: 95%;
+    height: 80vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.e-button {
+    font-size: 20px;
+    color: white;
+    background: var(--movements);
+    padding: 10px;
+    border: 3px solid var(--letters)
+}
+/* .white-letter{
+    font-size: 22px;
+    font-weight:800;
+    color: var(--button)
+} */
+
+/* https://codepen.io/Markshall/pen/ExPxpYX */

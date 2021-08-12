@@ -7,35 +7,57 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body  onload="sideEntries();">
     <div class="nav-head">
         <span><img class="logo" src="yuvDairy.png" alt="logo"></span>
         <span class="logo-heading">History Page</span>
         <span class="logo-heading pointer">Logout</span>
     </div>
-    <div class="container">
-        <div class="texture">
-            <div class="flex-two">
-            <span class="letter">
-                Choose your date:
-            </span>
-            <input class="date" type="date">
-            <button class="medium-button">Get this day history</button>
+    
+    <div class="body-content">
+    <div class="main-body">
+        <div class="container">
+            <div class="texture">
+                <div class="flex-two">
+                <span class="letter white-letter">
+                    Choose your date:
+                </span>
+                <input class="date" id="date" type="date">
+                <button class="medium-button" onclick="funHistory();">Get this day history</button>
+                </div>
+            </div>
+        </div>
+        <p class="readP" id="readP">slected date's dairy displays here</p>
+        <div class="container" id="show">
+            <div class="texture">
+                <span class="heading" id="resDate"><span>Dairy of {{date}}</span></span>
+                <br>
+                <input class="subject" placeholder="subject" id="resSub" type="text" disabled>
+                <br>
+                <br>
+                <textarea class="description" spellcheck="false" id="resDes" disabled></textarea>
+                <br>
+            </div>
+        </div>
+        <div class="container" id="hide">
+            <div class="texture alert">
+                <span class="heading" id="noDate"><span>Hey we did't of {{date}}</span></span>
+                <br>
+            <button class="large-button black-bg" click="edit()" >Add a record on this day</button>
             </div>
         </div>
     </div>
-    <div class="container" id="show">
-        <div class="texture">
-            <span class="heading"><span>Dairy of {{date}}</span></span>
-            <br>
-            <input class="subject" placeholder="subject" type="text" disabled>
-            <br>
-            <br>
-            <textarea class="description" spellcheck="false" disabled></textarea>
-            <br>
-            <br>
-            <button class="large-button" onclick="fun()">Post for today</button>
+
+    <div class="side-body">
+        <span class="side-header">Your last 10day entries (dd/mm/yyyy)</span>
+        <br>
+        <hr>
+        <div class="scrollable" id="scrollable">
+            <span>Hold on second we will load for you</span>
         </div>
     </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

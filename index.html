@@ -7,38 +7,56 @@
     <title>Yuv Dairy</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="loading();">
     <div class="nav-head">
         <span><img class="logo" src="yuvDairy.png" alt="logo"></span>
         <span class="logo-heading">Welcome Yuvaraj!</span>
         <span class="logo-heading pointer">Logout</span>
     </div>
     
-    <div class="container">
-        <div class="texture">
-            <div class="flex-two">
-            <span class="letter">
-                Hey Yuvaraj add your daily dairy record, post your day with words.
-            </span>
-            <button class="medium-button">Start new Post</button>
+    <div class="body-content">
+        <div class="main-body">
+            <div class="container">
+                <div class="texture">
+                    <div class="flex-two">
+                    <span class="letter">
+                        Hey Yuvaraj add your daily dairy record, post your day with words.
+                    </span>
+                    <button class="medium-button">Start new Post</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="texture">
-            <span class="heading"><span>Write your day here!</span></span>
+            <div class="container">
+                <div class="texture">
+                    <span class="heading"><span id="heading">Write your day here!</span></span>
+                    <br>
+                    <input class="subject" id="sub" placeholder="subject" type="text">
+                    <br>
+                    <br>
+                    <textarea class="description" id="des" spellcheck="false"></textarea>
+                    <br>
+                    <br>
+                    <button class="large-button" id="submit" onclick="duntoday();">Post for today</button>
+                    <br>
+                    <a href="history.html"><button id="his" class="large-button">Go to history</button></a>
+                </div>
+            </div>
+         </div>
+         <div class="side-body">
+            <span class="side-header">Go to history</span>
             <br>
-            <input class="subject" id="sub" placeholder="subject" type="text">
+            <span class="side-header">Go to All entries</span>
             <br>
+            <span class="side-header">Go to taskbar home (beta)</span>
             <br>
-            <textarea class="description" id="des" spellcheck="false"></textarea>
+            <span class="side-header"> ABOUT DEVELOPER</span>
             <br>
-            <br>
-            <button class="large-button" onclick="createTask();">Post for today</button>
+            <span class="side-header"> Go to profile</span>
+         </div>
         </div>
     </div>
     <div id="cardSection"></div>
-    <div class="container" id="end">
+    <!-- <div class="container" id="end">
         <div class="texture">
             <div class="flex-two">
                 <span class="letter h2">Hope your day went well
@@ -55,7 +73,7 @@
             </div>
             
         </div>
-    </div>
+    </div> -->
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
     <script src="script.js"></script>

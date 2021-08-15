@@ -44,7 +44,7 @@
     debugger
     firebase.firestore().collection(today).onSnapshot(function(snapshot){
         snapshot.forEach(function(value){
-            data = {
+          var  data = {
                 id: value.id,
                 head: value.data().head,
                 des: value.data().des,
@@ -87,7 +87,6 @@
     }
     debugger
     const today =  date + "-" + (mon ) + "-" + year;
-    debugger
     firebase.firestore().collection(today).onSnapshot(function(snapshot){
         snapshot.forEach(function(value){
             data = {
